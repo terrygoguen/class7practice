@@ -6,4 +6,14 @@
 </h2>
 <p>
     <a href="/companies">Back to all companies</a>
-</p>
+</p> 
+
+<ul>    
+    <% contacts = Contacts.where({"company_id" => @company["id"]}) %>
+    <% for contact in contacts %>
+        <li>
+            <%= contact["first_name"] %>
+            <%= contact["last_name"] %>
+        </li>
+    <% end %>
+</ul>
