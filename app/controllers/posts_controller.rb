@@ -5,15 +5,15 @@ class PostsController < ApplicationController
   end
 
   def new
-    @posts = Post.new
+    @post = Post.new
   end 
 
   def create
-   @posts = Post.new 
-   @posts["author"] = params["post"]["author"]
-   @posts["body"] = params["post"]["body"]
-   @posts["image"] = params["post"]["image"]
-   @posts.save
+   @post = Post.new 
+   @post["author"] = params["post"]["author"]
+   @post["body"] = params["post"]["body"]
+   @post["image"] = params["post"]["image"]
+   @post.save
    redirect_to "/posts"
   end 
 
